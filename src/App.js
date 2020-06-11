@@ -25,7 +25,11 @@ class Meteo extends Component{
   loadMeteo(){
     fetch("https://api.openweathermap.org/data/2.5/weather?q="+this.state.ville+"&appid=fc4347cedde9c8fe14fffac34eed3c60")
       .then((r)=> r.json())
-      .then((data)=> this.meteoLoaded(data));
+      .then((data)=> this.meteoLoaded(data))
+      .catch(()=>{ 
+                    this.setState({ville : "Lyon"});
+                    this.loadMeteo();
+                });
   }
 
   meteoLoaded(data){
