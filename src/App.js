@@ -27,14 +27,20 @@ class Hello extends Component{
 
 
 class App extends Component {
+
+  constructor(){
+    super();
+    this.state = {tab : [{prenom : "Guillaume", description : "Enseignant Formidable"},
+                         {prenom : "Florence", description : "Enseignant Formidable"},
+                         {prenom : "Nicolas", description : "Enseignant Formidable"}]};
+  }
+
   render(){
     return (
       <div className="App">
-        <Hello prenom="Guillaume">
-           Enseignant <b>formidable</b> de l'IPI
-        </Hello>
-        <Hello prenom="Estelle"></Hello>
-        <Hello prenom="Corentin"></Hello>
+        {
+          this.state.tab.map((item,i)=> <Hello prenom={item.prenom}>{item.description}</Hello>)
+        }
       </div>
     );
   }
