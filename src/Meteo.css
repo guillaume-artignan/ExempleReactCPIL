@@ -1,0 +1,16 @@
+.Meteo {
+    border : 1px solid black;
+    border-radius : 10px;
+    width : 300px;
+    box-shadow: 5px 5px 10px lightgray;
+    text-align: center;
+    padding : 10px;
+    box-sizing: border-box;
+}
+
+.Meteo ul {
+    list-style-type: none;
+    margin : 0;
+    padding : 0;
+}
+
